@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import "@rainbow-me/rainbowkit/styles.css";
+import { Web3Provider } from "@/components/providers/Web3Provider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -35,7 +37,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="relative min-h-full flex flex-col bg-black text-white">
-        {children}
+        <Web3Provider>{children}</Web3Provider>
       </body>
     </html>
   );

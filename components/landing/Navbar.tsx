@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ConnectWalletButton } from "@/components/wallet/ConnectWalletButton";
 import { ArrowRightIcon, CloseIcon, LogoIcon, MenuIcon } from "./icons";
 
 const navLinks = [
@@ -53,6 +54,7 @@ export function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
+          <ConnectWalletButton />
           <a
             href="#"
             className="rounded-lg px-4 py-2 text-sm text-zinc-300 transition-colors hover:text-white"
@@ -96,10 +98,11 @@ export function Navbar() {
             </a>
           ))}
           <hr className="my-4 border-white/10" />
+          <ConnectWalletButton fullWidth />
           <a
             href="#cta"
             onClick={() => setMobileOpen(false)}
-            className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-violet-600 px-4 py-3 text-sm font-medium text-white"
+            className="mt-3 flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-violet-600 px-4 py-3 text-sm font-medium text-white"
           >
             Get Started
             <ArrowRightIcon />
